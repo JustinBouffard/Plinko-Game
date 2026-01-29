@@ -1,18 +1,38 @@
-[gd_scene format=3 uid="uid://djxiprwniy681"]
+[gd_scene load_steps=7 format=3 uid="uid://djxiprwniy681"]
 
 [ext_resource type="Texture2D" uid="uid://cydgk84fnylsv" path="res://Assets/Round.png" id="1_d60mj"]
+[ext_resource type="Script" uid="uid://ckear6wdu8n56" path="res://Scripts/ball.gd" id="1_yk4cr"]
+[ext_resource type="Texture2D" uid="uid://cpn7uhrd8kfg4" path="res://Assets/Triangle.png" id="2_376qj"]
+[ext_resource type="Texture2D" uid="uid://cjv17lwy7opo0" path="res://Assets/Square.png" id="3_yk4cr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yk4cr"]
+bounce = 0.7
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mgc0q"]
 radius = 11.999998
 
-[node name="Ball" type="RigidBody2D" unique_id=2057674153]
+[node name="Ball" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_yk4cr")
 freeze = true
+script = ExtResource("1_yk4cr")
+throw_force = 500.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1334602068]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("CircleShape2D_mgc0q")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1822302890]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 0.039215688, 1)
 scale = Vector2(0.23999953, 0.23999953)
 texture = ExtResource("1_d60mj")
+
+[node name="ArrowPoint" type="Sprite2D" parent="."]
+position = Vector2(-1, 51.000004)
+scale = Vector2(0.13123865, 0.17458332)
+texture = ExtResource("2_376qj")
+flip_v = true
+
+[node name="ArrowTail" type="Sprite2D" parent="ArrowPoint"]
+position = Vector2(3.922267, -126.76056)
+scale = Vector2(0.50510675, 1.2274882)
+texture = ExtResource("3_yk4cr")

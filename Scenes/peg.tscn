@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://3gjcmxebmbwm"]
+
+[ext_resource type="Texture2D" uid="uid://cydgk84fnylsv" path="res://Assets/Round.png" id="1_e5a35"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e5a35"]
+radius = 52.086468
+
+[node name="Peg" type="StaticBody2D"]
+scale = Vector2(0.13, 0.13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_e5a35")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.61031204, 0.33037522, 0.23629168, 1)
+texture = ExtResource("1_e5a35")

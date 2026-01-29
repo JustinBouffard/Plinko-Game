@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bdl8iu6yg6mvf"]
+[gd_scene load_steps=14 format=3 uid="uid://bdl8iu6yg6mvf"]
 
 [ext_resource type="Texture2D" uid="uid://cjv17lwy7opo0" path="res://Assets/Square.png" id="1_l756w"]
 [ext_resource type="Script" uid="uid://bfpnd4nogsbkt" path="res://Scripts/main_game.gd" id="1_mgc0q"]
@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cpn7uhrd8kfg4" path="res://Assets/Triangle.png" id="3_0e3vx"]
 [ext_resource type="Script" uid="uid://7bwnyxw8v401" path="res://Scripts/triangle.gd" id="3_6j5ir"]
 [ext_resource type="PackedScene" uid="uid://djxiprwniy681" path="res://Scenes/ball.tscn" id="6_bb2iq"]
-[ext_resource type="Script" uid="uid://crekar8t4fr31" path="res://Scripts/peg_spawner.gd" id="7_18r40"]
-[ext_resource type="PackedScene" uid="uid://3gjcmxebmbwm" path="res://Scenes/peg.tscn" id="8_6y7pd"]
 
 [sub_resource type="Gradient" id="Gradient_4rmt8"]
 offsets = PackedFloat32Array(0, 0.5, 1)
@@ -150,11 +148,6 @@ polygon = PackedVector2Array(2.3654022, -67.04016, -81.60654, 67.03992, 85.15463
 
 [node name="Ball" parent="." instance=ExtResource("6_bb2iq")]
 position = Vector2(397, 81)
-
-[node name="PegSpawner" type="Node2D" parent="."]
-position = Vector2(120, 192)
-script = ExtResource("7_18r40")
-peg_scene = ExtResource("8_6y7pd")
 
 [connection signal="body_entered" from="PlusPointArea" to="." method="_on_plus_point_body_entered"]
 [connection signal="body_entered" from="MinusPointArea" to="." method="_on_minus_one_point_body_entered"]
