@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://djxiprwniy681"]
+
+[ext_resource type="Texture2D" uid="uid://cydgk84fnylsv" path="res://Assets/Round.png" id="1_d60mj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mgc0q"]
+radius = 11.999998
+
+[node name="Ball" type="RigidBody2D" unique_id=2057674153]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1334602068]
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("CircleShape2D_mgc0q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1822302890]
+modulate = Color(1, 1, 0.039215688, 1)
+scale = Vector2(0.23999953, 0.23999953)
+texture = ExtResource("1_d60mj")

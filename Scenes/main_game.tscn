@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdl8iu6yg6mvf"]
+[gd_scene format=3 uid="uid://bdl8iu6yg6mvf"]
 
 [ext_resource type="Texture2D" uid="uid://cjv17lwy7opo0" path="res://Assets/Square.png" id="1_l756w"]
+[ext_resource type="Script" uid="uid://bfpnd4nogsbkt" path="res://Scripts/main_game.gd" id="1_mgc0q"]
 [ext_resource type="Texture2D" uid="uid://cydgk84fnylsv" path="res://Assets/Round.png" id="2_pu3va"]
 [ext_resource type="Texture2D" uid="uid://cpn7uhrd8kfg4" path="res://Assets/Triangle.png" id="3_0e3vx"]
+[ext_resource type="Script" uid="uid://7bwnyxw8v401" path="res://Scripts/triangle.gd" id="3_6j5ir"]
 
 [sub_resource type="Gradient" id="Gradient_4rmt8"]
 offsets = PackedFloat32Array(0, 0.5, 1)
@@ -11,8 +13,14 @@ colors = PackedColorArray(0.8235294, 0, 0, 1, 1, 1, 1, 1, 4.813075e-06, 0.879949
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_l756w"]
 gradient = SubResource("Gradient_4rmt8")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgc0q"]
+size = Vector2(84.053604, 122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bb2iq"]
+size = Vector2(73.54682, 122)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e3vx"]
-size = Vector2(118, 122)
+size = Vector2(75.971436, 122)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pu3va"]
 size = Vector2(122, 127.89229)
@@ -20,15 +28,19 @@ size = Vector2(122, 127.89229)
 [sub_resource type="CircleShape2D" id="CircleShape2D_0e3vx"]
 radius = 51.351727
 
-[node name="MainGame" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_mgc0q"]
+radius = 13.152946
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="MainGame" type="Node2D" unique_id=1297326896]
+script = ExtResource("1_mgc0q")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=75146010]
 position = Vector2(385.96478, 404.25)
 rotation = -1.5707964
 scale = Vector2(3.2148433, 778.42957)
 texture = SubResource("GradientTexture1D_l756w")
 
-[node name="ScoreLabel" type="Label" parent="."]
+[node name="ScoreLabel" type="Label" parent="." unique_id=85639900]
 texture_filter = 1
 offset_left = 350.0
 offset_top = 9.0
@@ -38,91 +50,116 @@ scale = Vector2(1.5, 1.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Score: 0"
 
-[node name="PointArea" type="Area2D" parent="."]
-position = Vector2(399.00003, 798)
+[node name="PlusPointArea" type="Area2D" parent="." unique_id=1918376146]
+position = Vector2(398.99997, 816)
 scale = Vector2(1.5466337, 0.5075553)
 
-[node name="Sprite2D" type="Sprite2D" parent="PointArea"]
+[node name="Sprite2D" type="Sprite2D" parent="PlusPointArea" unique_id=1479735309]
 modulate = Color(0.26666668, 0.5254902, 0.93333334, 1)
 texture = ExtResource("1_l756w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PointArea"]
-shape = SubResource("RectangleShape2D_0e3vx")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlusPointArea" unique_id=854846937]
+position = Vector2(-0.6465454, 0)
+scale = Vector2(0.9999996, 0.9999996)
+shape = SubResource("RectangleShape2D_mgc0q")
 
-[node name="PointArea2" type="Area2D" parent="."]
-position = Vector2(627, 798.00006)
+[node name="MinusPointArea" type="Area2D" parent="." unique_id=511928269]
+position = Vector2(626.99994, 816.00006)
 scale = Vector2(1.5466337, 0.5075553)
 
-[node name="Sprite2D" type="Sprite2D" parent="PointArea2"]
-modulate = Color(0.26666668, 0.5254902, 0.93333334, 1)
+[node name="Sprite2D" type="Sprite2D" parent="MinusPointArea" unique_id=736522261]
+modulate = Color(0.2545886, 0.13602796, 0.03072874, 1)
 texture = ExtResource("1_l756w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PointArea2"]
-shape = SubResource("RectangleShape2D_0e3vx")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MinusPointArea" unique_id=763453095]
+position = Vector2(1.168251e-05, -0.00012025322)
+scale = Vector2(0.9999996, 0.9999996)
+shape = SubResource("RectangleShape2D_bb2iq")
 
-[node name="PointArea3" type="Area2D" parent="."]
-position = Vector2(162.00006, 798.00006)
+[node name="MinusPointArea2" type="Area2D" parent="." unique_id=1293721598]
+position = Vector2(162, 816.00006)
 scale = Vector2(1.5466337, 0.5075553)
 
-[node name="Sprite2D" type="Sprite2D" parent="PointArea3"]
-modulate = Color(0.26666668, 0.5254902, 0.93333334, 1)
+[node name="Sprite2D" type="Sprite2D" parent="MinusPointArea2" unique_id=1119350279]
+modulate = Color(0.2545886, 0.13602796, 0.03072874, 1)
 texture = ExtResource("1_l756w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PointArea3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MinusPointArea2" unique_id=1724878851]
+position = Vector2(2.7478943, 0)
+scale = Vector2(0.9999996, 0.9999996)
 shape = SubResource("RectangleShape2D_0e3vx")
 
-[node name="Wall" type="StaticBody2D" parent="."]
+[node name="Wall" type="StaticBody2D" parent="." unique_id=1705293593]
 position = Vector2(47, 403.99997)
 scale = Vector2(0.9067581, 6.7400465)
 
-[node name="Sprite2D" type="Sprite2D" parent="Wall"]
+[node name="Sprite2D" type="Sprite2D" parent="Wall" unique_id=1729706687]
 modulate = Color(0.10744973, 0.39590046, 9.62615e-08, 1)
 texture = ExtResource("1_l756w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=281469362]
 position = Vector2(0, 0.29673004)
 scale = Vector2(1, 1.0000002)
 shape = SubResource("RectangleShape2D_pu3va")
 
-[node name="Wall2" type="StaticBody2D" parent="."]
+[node name="Wall2" type="StaticBody2D" parent="." unique_id=1967413181]
 position = Vector2(745, 399.99997)
 scale = Vector2(0.9067581, 6.7400465)
 
-[node name="Sprite2D" type="Sprite2D" parent="Wall2"]
+[node name="Sprite2D" type="Sprite2D" parent="Wall2" unique_id=1333910866]
 modulate = Color(0.10744973, 0.39590046, 9.62615e-08, 1)
 texture = ExtResource("1_l756w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=182932025]
 position = Vector2(0, 0.29673004)
 scale = Vector2(1, 1.0000002)
 shape = SubResource("RectangleShape2D_pu3va")
 
-[node name="Bouncer" type="StaticBody2D" parent="."]
-position = Vector2(281, 791)
+[node name="Bouncer" type="StaticBody2D" parent="." unique_id=271392572]
+position = Vector2(280, 798)
+scale = Vector2(0.96000487, 0.96000487)
 
-[node name="Sprite2D" type="Sprite2D" parent="Bouncer"]
+[node name="Sprite2D" type="Sprite2D" parent="Bouncer" unique_id=1629888554]
 texture = ExtResource("2_pu3va")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bouncer"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bouncer" unique_id=748044554]
 shape = SubResource("CircleShape2D_0e3vx")
 
-[node name="Bouncer2" type="StaticBody2D" parent="."]
-position = Vector2(518, 789)
+[node name="Bouncer2" type="StaticBody2D" parent="." unique_id=910788126]
+position = Vector2(518, 796)
+scale = Vector2(0.96000487, 0.96000487)
 
-[node name="Sprite2D" type="Sprite2D" parent="Bouncer2"]
+[node name="Sprite2D" type="Sprite2D" parent="Bouncer2" unique_id=1801948902]
 texture = ExtResource("2_pu3va")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bouncer2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bouncer2" unique_id=1547640485]
 shape = SubResource("CircleShape2D_0e3vx")
 
-[node name="Triangle" type="StaticBody2D" parent="."]
-position = Vector2(403, 646)
-scale = Vector2(0.5, 0.5)
+[node name="Triangle" type="AnimatableBody2D" parent="." unique_id=366217590]
+position = Vector2(199, 632.00006)
+scale = Vector2(0.8455205, 0.35799488)
+script = ExtResource("3_6j5ir")
+distance = 400.0
+speed = 180.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Triangle"]
-modulate = Color(1, 1, 0, 1)
+[node name="Sprite2D" type="Sprite2D" parent="Triangle" unique_id=1222536764]
 texture = ExtResource("3_0e3vx")
-flip_v = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Triangle"]
-polygon = PackedVector2Array(2, 67, -83, -69, 87, -69)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Triangle" unique_id=920063301]
+polygon = PackedVector2Array(2.3654022, -67.04016, -81.60654, 67.03992, 85.15463, 67.03992)
+
+[node name="Ball" type="RigidBody2D" parent="." unique_id=1045940048]
+position = Vector2(392, 77)
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=223262141]
+modulate = Color(1, 1, 0.039215688, 1)
+scale = Vector2(0.23999953, 0.23999953)
+texture = ExtResource("2_pu3va")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=575648770]
+shape = SubResource("CircleShape2D_mgc0q")
+
+[connection signal="body_entered" from="PlusPointArea" to="." method="_on_plus_point_body_entered"]
+[connection signal="body_entered" from="MinusPointArea" to="." method="_on_minus_one_point_body_entered"]
+[connection signal="body_entered" from="MinusPointArea2" to="." method="_on_minus_one_point_body_entered"]
