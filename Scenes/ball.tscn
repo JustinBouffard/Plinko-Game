@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cjv17lwy7opo0" path="res://Assets/Square.png" id="3_yk4cr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yk4cr"]
-bounce = 0.7
+bounce = 0.9
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mgc0q"]
 radius = 11.999998
@@ -15,7 +15,7 @@ radius = 11.999998
 physics_material_override = SubResource("PhysicsMaterial_yk4cr")
 freeze = true
 script = ExtResource("1_yk4cr")
-throw_force = 500.0
+throw_force = 300.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.0000001, 1.0000001)
