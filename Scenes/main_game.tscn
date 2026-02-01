@@ -54,86 +54,86 @@ text = "Score: 0"
 position = Vector2(398.99997, 792)
 scale = Vector2(1.5466337, 0.5075553)
 
-[node name="Sprite2D" type="Sprite2D" parent="PlusPointArea" unique_id=1419416101]
-modulate = Color(0.26666668, 0.5254902, 0.93333334, 1)
-texture = ExtResource("1_l756w")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlusPointArea" unique_id=137333335]
 position = Vector2(-0.6465454, 0)
-scale = Vector2(0.9999996, 0.9999996)
+scale = Vector2(0.9999995, 0.99999946)
 shape = SubResource("RectangleShape2D_mgc0q")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlusPointArea" unique_id=1419416101]
+modulate = Color(0.26666668, 0.5254902, 0, 1)
+texture = ExtResource("1_l756w")
 
 [node name="MinusPointArea" type="Area2D" parent="." unique_id=1984630674]
 position = Vector2(626.99994, 792.00006)
 scale = Vector2(1.5466337, 0.5075553)
 
-[node name="Sprite2D" type="Sprite2D" parent="MinusPointArea" unique_id=1359285530]
-modulate = Color(0.2545886, 0.13602796, 0.03072874, 1)
-texture = ExtResource("1_l756w")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MinusPointArea" unique_id=1086166840]
-position = Vector2(1.168251e-05, -0.00012025322)
-scale = Vector2(0.9999996, 0.9999996)
+position = Vector2(0, -0.00012207031)
+scale = Vector2(0.9999995, 0.99999946)
 shape = SubResource("RectangleShape2D_bb2iq")
+
+[node name="Sprite2D" type="Sprite2D" parent="MinusPointArea" unique_id=1359285530]
+modulate = Color(0.7809645, 0.6725037, 0.032102827, 1)
+texture = ExtResource("1_l756w")
 
 [node name="MinusPointArea2" type="Area2D" parent="." unique_id=1012309174]
 position = Vector2(162, 792.00006)
 scale = Vector2(1.5466337, 0.5075553)
 
-[node name="Sprite2D" type="Sprite2D" parent="MinusPointArea2" unique_id=732970879]
-modulate = Color(0.2545886, 0.13602796, 0.03072874, 1)
-texture = ExtResource("1_l756w")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MinusPointArea2" unique_id=1143583473]
 position = Vector2(2.7478943, 0)
-scale = Vector2(0.9999996, 0.9999996)
+scale = Vector2(0.9999995, 0.99999946)
 shape = SubResource("RectangleShape2D_0e3vx")
+
+[node name="Sprite2D" type="Sprite2D" parent="MinusPointArea2" unique_id=732970879]
+modulate = Color(0.7809645, 0.6725037, 0.032102827, 1)
+texture = ExtResource("1_l756w")
 
 [node name="Wall" type="StaticBody2D" parent="." unique_id=1787942283]
 position = Vector2(47, 403.99997)
 scale = Vector2(0.9067581, 6.7400465)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=2101178340]
+position = Vector2(0, 0.29673004)
+scale = Vector2(1, 1.0000004)
+shape = SubResource("RectangleShape2D_pu3va")
+
 [node name="Sprite2D" type="Sprite2D" parent="Wall" unique_id=273427231]
 modulate = Color(0.10744973, 0.39590046, 9.62615e-08, 1)
 texture = ExtResource("1_l756w")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=2101178340]
-position = Vector2(0, 0.29673004)
-scale = Vector2(1, 1.0000002)
-shape = SubResource("RectangleShape2D_pu3va")
 
 [node name="Wall2" type="StaticBody2D" parent="." unique_id=914630220]
 position = Vector2(745, 399.99997)
 scale = Vector2(0.9067581, 6.7400465)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=916995150]
+position = Vector2(0, 0.29673004)
+scale = Vector2(1, 1.0000004)
+shape = SubResource("RectangleShape2D_pu3va")
+
 [node name="Sprite2D" type="Sprite2D" parent="Wall2" unique_id=2135531117]
 modulate = Color(0.10744973, 0.39590046, 9.62615e-08, 1)
 texture = ExtResource("1_l756w")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=916995150]
-position = Vector2(0, 0.29673004)
-scale = Vector2(1, 1.0000002)
-shape = SubResource("RectangleShape2D_pu3va")
 
 [node name="Bouncer" type="StaticBody2D" parent="." unique_id=1571375065]
 position = Vector2(280, 774)
 scale = Vector2(0.96000487, 0.96000487)
 
-[node name="Sprite2D" type="Sprite2D" parent="Bouncer" unique_id=881037926]
-texture = ExtResource("2_pu3va")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bouncer" unique_id=275221175]
 shape = SubResource("CircleShape2D_0e3vx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bouncer" unique_id=881037926]
+texture = ExtResource("2_pu3va")
 
 [node name="Bouncer2" type="StaticBody2D" parent="." unique_id=2003937435]
 position = Vector2(518, 772)
 scale = Vector2(0.96000487, 0.96000487)
 
-[node name="Sprite2D" type="Sprite2D" parent="Bouncer2" unique_id=2023362400]
-texture = ExtResource("2_pu3va")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bouncer2" unique_id=409283491]
 shape = SubResource("CircleShape2D_0e3vx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bouncer2" unique_id=2023362400]
+texture = ExtResource("2_pu3va")
 
 [node name="Triangle" type="AnimatableBody2D" parent="." unique_id=1983251273]
 position = Vector2(199, 632.00006)
@@ -142,14 +142,15 @@ script = ExtResource("3_6j5ir")
 distance = 400.0
 speed = 180.0
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Triangle" unique_id=1198047624]
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(2.3654022, -67.04016, -81.60654, 67.03992, 85.15463, 67.03992)
+
 [node name="Sprite2D" type="Sprite2D" parent="Triangle" unique_id=1619779923]
 texture = ExtResource("3_0e3vx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Triangle" unique_id=1198047624]
-polygon = PackedVector2Array(2.3654022, -67.04016, -81.60654, 67.03992, 85.15463, 67.03992)
-
 [node name="Ball" parent="." unique_id=864485736 instance=ExtResource("6_bb2iq")]
-position = Vector2(397, 81)
+position = Vector2(397, 104)
 
 [node name="PegSpawner" type="Node2D" parent="." unique_id=1579100737]
 position = Vector2(120, 192)

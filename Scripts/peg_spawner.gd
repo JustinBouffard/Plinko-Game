@@ -3,9 +3,9 @@ extends Node2D
 @export var peg_scene: PackedScene
 
 @export var rows = 8
-@export var pegs_per_row = 11
-@export var x_spacing = 53
-@export var y_spacing = 50
+@export var pegs_per_row = 11.0
+@export var x_spacing = 53.0
+@export var y_spacing = 50.0
 @export var row_offset = 25.5
 
 func _ready() -> void:

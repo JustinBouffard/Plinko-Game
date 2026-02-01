@@ -1,8 +1,8 @@
 extends Node2D
 
-@export  var ball_start_pos := Vector2(397.0, 81.0)
+@export  var ball_start_pos = Vector2(397.0, 81.0)
 
-var score := 0
+var score = 0
 
 func _on_plus_point_body_entered(body: Node2D) -> void:
 	score += 3

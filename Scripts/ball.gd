@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@export var throw_force := 800.0
+@export var throw_force = 800.0
 
 func _physics_process(delta: float) -> void:
 	look_at(get_global_mouse_position())
